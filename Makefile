@@ -1,5 +1,9 @@
-build: Dockerfile
-	docker build --tag mikhailzayts/dactyl .
+tag := mikhailzayts/dactyl
+dir := ./src
+container_dir := /home/ubuntu/src
 
-run:
-	docker run --rm -it mikhailzayts/dactyl
+build: Dockerfile
+	docker build --tag $(tag) .
+
+run: build
+	docker run --rm -it --volume $(dir):$(container_dir) $(tag)
