@@ -34,5 +34,3 @@ RUN chsh -s ~/.zshrc
 CMD ["zsh"]
 
 WORKDIR /home/ubuntu
-
-# RUN zsh -c eval "$(starship init zsh)"
